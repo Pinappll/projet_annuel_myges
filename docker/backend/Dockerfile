@@ -15,9 +15,9 @@ CMD ["npx", "tsx", "watch", "infrastructure/backend/express/server.ts"]
 FROM base AS builder
 RUN npm ci
 COPY . .
-RUN cd domain && npx tsc -p tsconfig.json
-RUN cd application && npx tsc -p tsconfig.json
-RUN cd infrastructure/backend/express && npx tsc -p tsconfig.json && npx tsc-alias -p tsconfig.json
+RUN npm run build:express
+RUN cd infrastructure/backend/express && npx tsc-alias -p tsconfig.json
+
 # ---- Prod ----
 FROM node:20-slim AS prod
 WORKDIR /app
