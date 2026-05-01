@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "tsx watch server.ts",
-    "build": "tsc -b",
+    "build": "tsc -b && tsc-alias -p tsconfig.json",
     "start": "node dist/server.js"
   },
   "dependencies": {
@@ -19,6 +19,7 @@
     "@types/express": "^5",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/speakeasy": "^2.0.10",
+    "tsc-alias": "^1.8.17",
     "typescript": "^5"
   }
 }
