@@ -19,8 +19,8 @@ WORKDIR /app
 ENV NODE_ENV=production
 COPY package*.json ./
 COPY infrastructure/backend/express/package*.json ./infrastructure/backend/express/
-RUN npm install --save tsconfig-paths
 RUN npm ci --omit=dev --workspace=@myges/express
 COPY --from=builder /app/infrastructure/backend/express/dist ./infrastructure/backend/express/dist
-COPY --from=builder /app/infrastructure/backend/express/tsconfig.json ./infrastructure/backend/express/tsconfig.json
-CMD ["node", "-r", "tsconfig-paths/register", "infrastructure/backend/express/dist/server.js"]
+COPY --from=builder /app/domain/dist ./domain/dist
+COPY --from=builder /app/application/dist ./application/dist
+CMD ["node", "infrastructure/backend/express/dist/server.js"]
