@@ -13,6 +13,8 @@ FROM base AS builder
 RUN npm ci
 COPY . .
 RUN npm run build:express
+RUN find /app/infrastructure/backend/express/dist -name "*.js" -exec sed -i 's|require("@application/|require("/app/application/dist/|g' {} \;
+RUN find /app/infrastructure/backend/express/dist -name "*.js" -exec sed -i 's|require("@domain/|require("/app/domain/dist/|g' {} \;
 # ---- Prod ----
 FROM node:20-slim AS prod
 WORKDIR /app
