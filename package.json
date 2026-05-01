@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "dev:express": "npm run dev --workspace=@myges/express",
-    "build:express": "npm run build --workspace=@myges/domain && npm run build --workspace=@myges/application && npm run build --workspace=@myges/express",
+    "build:express": "npm run build --workspace=@myges/express",
     "start:express": "npm run start --workspace=@myges/express",
     "dev:next": "npm run dev --workspace=@myges/next",
     "start:next": "npm run start --workspace=@myges/next"
