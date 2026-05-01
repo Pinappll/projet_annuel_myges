@@ -1,1 +1,1 @@
-export type { DevSeedAccount, Role, User } from "../../../../../domain/auth/user"
+export type { DevSeedAccount, Role, User } from "@domain/auth/user"

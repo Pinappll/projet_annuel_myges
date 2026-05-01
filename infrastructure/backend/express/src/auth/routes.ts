@@ -1,5 +1,5 @@
-import { AuthUseCases } from "../../../../../application/auth/use-cases"
-import { PASSWORD_MAX_AGE_DAYS, needsPasswordReset } from "../../../../../domain/auth/security-policy"
+import { AuthUseCases } from "@application/auth/use-cases"
+import { PASSWORD_MAX_AGE_DAYS, needsPasswordReset } from "@domain/auth/security-policy"
 import { Router } from "express"
 import { passwordHasher, tokenProvider, totpProvider, userRepository } from "./adapters"
 import { requireAuth, requireRole, type AuthRequest } from "./middleware"

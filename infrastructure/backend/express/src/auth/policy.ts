@@ -6,4 +6,4 @@ export {
   MAX_FAILED_ATTEMPTS,
   needsPasswordReset,
   PASSWORD_MAX_AGE_DAYS,
-} from "../../../../../domain/auth/security-policy"
+} from "@domain/auth/security-policy"

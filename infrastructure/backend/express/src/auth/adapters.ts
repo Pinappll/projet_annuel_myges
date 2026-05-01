@@ -1,8 +1,8 @@
 import argon2 from "argon2"
 import jwt from "jsonwebtoken"
 import speakeasy from "speakeasy"
-import { type PasswordHasher, type TokenProvider, type TotpProvider, type UserRepository } from "../../../../../application/auth/ports"
-import { type Role, type User } from "../../../../../domain/auth/user"
+import { type PasswordHasher, type TokenProvider, type TotpProvider, type UserRepository } from "@application/auth/ports"
+import { type Role, type User } from "@domain/auth/user"
 import { devSeedAccounts, usersByEmail, usersById } from "./store"
 
 const JWT_SECRET = process.env.JWT_SECRET ?? "dev-only-secret-change-me"

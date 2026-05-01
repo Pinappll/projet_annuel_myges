@@ -1,6 +1,6 @@
 import { type NextFunction, type Request, type Response } from "express"
 import { tokenProvider } from "./adapters"
-import { type Role } from "../../../../../domain/auth/user"
+import { type Role } from "@domain/auth/user"
 
 export type AuthRequest = Request & {
   auth?: { userId: string; role: Role; email: string }
